@@ -17,8 +17,6 @@ return new class extends Migration
             $table->text('contenu');
             $table->unsignedBigInteger('id_pv');
             $table->foreign('id_pv')->references('id_pv')->on('pvs')->onDelete('cascade');
-            $table->unsignedBigInteger('codeApogee');
-            $table->foreign('codeApogee')->references('codeApogee')->on('etudiants')->onDelete('cascade');
             $table->timestamps();
         });
     }

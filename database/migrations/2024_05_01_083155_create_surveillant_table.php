@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('surveillant', function (Blueprint $table) {
             $table->bigIncrements('id_surveillant');
             $table->unsignedBigInteger('id_departement');
-            $table->foreign('id_departement')->references('id_departement')->on('departement')->onDelete('cascade');
+            $table->foreign('id_departement')->references('id_departement')->on('departements')->onDelete('cascade');
             $table->string('nomComplet_s',40);
             $table->timestamps();
         });
