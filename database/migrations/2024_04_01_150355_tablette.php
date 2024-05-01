@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('etudiants', function (Blueprint $table) {
-            $table->bigIncrements('codeApogee');
-            $table->string('nom_etudiant',20);
-            $table->string('prenom_etudiant',20);
-            $table->string('CNE',20);
-            $table->string('photo',50);
+        Schema::create('tablettes', function (Blueprint $table) {
+            $table->bigIncrements('id_tablette');
+            $table->char('code', 12);
+            $table->integer('numero_serie');
+            $table->boolean('statut');
+            $table->integer('code_association');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('etudiants');
+        Schema::dropIfExists('tablettes');
     }
 };

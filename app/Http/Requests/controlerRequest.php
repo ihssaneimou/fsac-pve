@@ -25,8 +25,7 @@ class controlerRequest extends FormRequest
     {
         return [
             'id_administrateur'=>'required | integer | exists:administrateurs,id_administrateur',
-           
-            'id_tablette'=>'required | integer | exists:sessions,id_session',
+            'id_tablette'=>'required | integer | exists:tablettes,id_tablette',
             
         ];
     }
@@ -45,13 +44,9 @@ class controlerRequest extends FormRequest
             'id_administrateur.required'=>" l'id de ladministrateur doit etre fourni",
             'id_administrateur.exists:examens,id_administrateurs' =>"le id de ladministrateur doit etre existe",
             'id_administrateur.integer' =>"l id de ladministrateur doit être un  nombre entier",
-        
             'id_tablette.required'=>"l'id de la tablette doit etre fourni",
             'id_tablette.integer'=>"l'id la tablette doit etre un entier",
             'id_tablette.exists:tablettes,id_tablettes'=>"l 'id la tablette doit etre existe",
-            
-
-
         ];
     }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('signers', function (Blueprint $table) {
             $table->unsignedBigInteger('id_surveillant');
-            $table->foreign('id_surveillant')->references('id_surveillant')->on('surveillant')->onDelete('cascade');
+            $table->foreign('id_surveillant')->references('id_surveillant')->on('surveillants')->onDelete('cascade');
             $table->unsignedBigInteger('id_pv');
             $table->foreign('id_pv')->references('id_pv')->on('pvs')->onDelete('cascade');
             $table->string('signature',50);

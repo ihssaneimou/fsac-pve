@@ -25,7 +25,6 @@ class gererRequest extends FormRequest {
     {
         return [
             'id_administrateur'=>'required | integer | exists:administrateurs,id_administrateur',
-           
             'id_session'=>'required | integer | exists:sessions,id_session',
             
         ];
@@ -42,15 +41,14 @@ class gererRequest extends FormRequest {
     public function messages()
     {
         return[
-            'id_administrateur.required'=>" l'id de ladministrateur doit etre fourni",
-            'id_administrateur.exists:examens,id_administrateurs' =>"l'id de ladministrateur doit etre existe",
-            'id_administrateur.integer' =>"l'id de ladministrateur doit être un  nombre entier",
+            'id_administrateur.required'=>' l\'id de ladministrateur doit etre fourni',
+            'id_administrateur.exists:administrateurs,id_administrateurs' =>"l\'id de ladministrateur doit etre existe",
+            'id_administrateur.integer' =>'l\'id de ladministrateur doit être un  nombre entier',
         
-            'id_session.required'=>"l id de la session doit etre fourni",
-            'id_session.integer'=>"l'id le la session doit etre un entier",
-            'id_session.exists:sessions,id_sessions'=>"l'id le la session doit etre existe",
-            
-
+            'id_session.required'=>'l\' id de la session doit etre fourni',
+            'id_session.integer'=>'l\'id le la session doit etre un entier',
+            'id_session.exists:sessions,id_sessions'=>'l\'id le la session doit etre existe',
+    
 
         ];
     }

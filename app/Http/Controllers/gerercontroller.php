@@ -8,7 +8,8 @@ use App\Models\gerer;
 use Exception;
 use Illuminate\Http\Request;
 
-class gerercontroller extends Controller
+
+class gererController extends Controller
 {
     
         public function index(){

@@ -24,10 +24,10 @@ class administrateurRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'mail'=>'required | string | max:40 ',
+            'mail'=>'required | string | max:40 | email ',
             'nom'=>'required | string| max:20 ',
             'prenom'=>'required| string | max:20 ',
-            'motdepasse'=>'required | max:20 ',
+            'motdepasse'=>'required | max:30 ',
         ];
     }
     public function failedValidation(Validator $validator){
@@ -46,15 +46,17 @@ public function messages()
         return[
             'mail.required '=>'mail non fourni',
             'mail.max:40'=>'votre mail ne doit pas depasser 40 characters',
+            'mail.string'=>"le mail  doit être un string",
+            'mail.email'=>'format est incorrecte',
             'nom.required '=>'le nom doit etre fourni',
             'nom.max:20'=>'votre nom ne doit pas depasser 20 characters',
+            'nom.string'=>"le nom  doit être un string",
             'prenom.required '=>'un champs prenom doit etre fourni',
             'prenom.max:20'=>'votre nom ne doit pas depasser 20 characters',
-            'id_administrateur.integer'=>'le id de ladmin doit etre entier',
-            'nom.string'=>"le nom  doit être un string",
             'prenom.string'=>"le prenom  doit être un string",
+            'nom.string'=>"le nom  doit être un string",
             'motdepasse.required '=>'le mot de passe doit etre fourni',
-            'motdepasse.max:20'=>'votre mot de passe ne doit pas depasser 20 characters',
+            'motdepasse.max:30'=>'votre mot de passe ne doit pas depasser 20 characters',
         ];
     }
 

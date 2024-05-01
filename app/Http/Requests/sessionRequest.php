@@ -24,7 +24,6 @@ class sessionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_session'=>'integer ',
             'nom_session'=>' string | max:20 ',
             'type_session'=>' string | max:20 '
             
@@ -42,7 +41,6 @@ class sessionRequest extends FormRequest
     public function messages()
     {
         return[
-            'id_session.integer'=>'le id du session doit etre entier',
             'nom_session.string'=>"le nom de la session  doit être un string",
             'nom_session.max:20'=>"le nom ne doit pas depasser 20 characteres",
             'type_session.string'=>"le type de la session  doit être un string",

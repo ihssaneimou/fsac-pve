@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class ControlerController extends Controller
 {
     public function index(){
-        return 'Liste des tablettes controlees';
+        return 'Liste des tablettes ';
     }
     public function store(controlerRequest $request){
 
@@ -40,9 +40,8 @@ class ControlerController extends Controller
         try{
         
             $controler->id_administrateur=$request->id_administrateur;
-            $controler->id_tablette=$request->id_tablette;
-        
-        $controler->save();
+            $controler->id_tablette=$request->id_tablette; 
+            $controler->save();
 
         return response()->json([
             'status_code'=>201,

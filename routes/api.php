@@ -10,16 +10,12 @@ use App\Http\Controllers\localController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\PVController;
 use App\Http\Controllers\RapportController;
-use App\Models\Administrateur;
-use App\Models\departement;
+use App\Http\Controllers\signerController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AdministrateurController;
 use App\Http\Controllers\controlercontroller;
 use App\Http\Controllers\tabletteController;
-use App\Http\Controllers\sessionController;
-use App\Http\Controllers\ControllerController;
 use App\Http\Controllers\gererController;
-use App\Http\Controllers\signerController;
 use Illuminate\Support\Facades\Route;
 
 /*

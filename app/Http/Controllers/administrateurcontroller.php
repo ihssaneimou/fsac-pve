@@ -34,29 +34,22 @@ class administrateurController extends Controller
         
     }
 
-    public function update(Request $request, $id)
+    public function update(administrateurRequest $request,administrateur $administrateur )
     {
-        
-        $administrateur = Administrateur::findOrFail($id);
-
-            $administrateur->mot_de_passe = $request->mot_de_passe;
-        
-    
-            $administrateur->mail = $request->mail;
-            $administrateur->save();
+        $administrateur->mail=$request->mail;
+        $administrateur->nom=$request->nom;
+        $administrateur->prenom=$request->prenom;
+        $administrateur->mot_de_passe = bcrypt($request->mot_de_passe);
+        $administrateur->save();
         }
 
-    
-        
-
-
-    public function delete(administrateur  $administrateur) {
+public function delete(administrateur  $administrateur) {
          try{
                 $administrateur->delete();
 
             return response()->json([
                 'status_code'=>200,
-                'status_message'=>'ladministrateur a été supprimer',
+                'status_message'=>'l\'administrateur a été supprimer',
                 'data'=>$administrateur
             ]);
             

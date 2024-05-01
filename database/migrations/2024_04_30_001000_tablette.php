@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('tablettes', function (Blueprint $table) {
             $table->bigIncrements('id_tablette');
-            
             $table->char('code', 12);
             $table->integer('numero_serie');
             $table->boolean('statut');

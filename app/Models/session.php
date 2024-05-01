@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class session extends Model
 {  protected $primaryKey = 'id_session';
     protected $fillable = ['nom_session', 'type_session'];
-
-    
 }
