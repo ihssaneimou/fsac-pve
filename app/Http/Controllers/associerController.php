@@ -8,12 +8,12 @@ use App\Models\associer;
 use Exception;
 use Illuminate\Http\Request;
 
-class associerController extends Controller
+class passerController extends Controller
 {
     public function index(){
         return 'Liste des surveillants affectes';
     }
-    public function store(AssocierRequest $request){
+    public function store(associerRequest $request){
 
         try{
         $associer = new associer();
