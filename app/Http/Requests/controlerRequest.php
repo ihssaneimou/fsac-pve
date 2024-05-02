@@ -42,7 +42,7 @@ class controlerRequest extends FormRequest
     {
         return[
             'id_administrateur.required'=>" l'id de ladministrateur doit etre fourni",
-            'id_administrateur.exists:examens,id_administrateurs' =>"le id de ladministrateur doit etre existe",
+            'id_administrateur.exists:administrateurs,id_administrateur' =>"le id de ladministrateur doit etre existe",
             'id_administrateur.integer' =>"l id de ladministrateur doit être un  nombre entier",
             'id_tablette.required'=>"l'id de la tablette doit etre fourni",
             'id_tablette.integer'=>"l'id la tablette doit etre un entier",
