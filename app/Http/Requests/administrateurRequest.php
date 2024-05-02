@@ -27,7 +27,7 @@ class administrateurRequest extends FormRequest
             'mail'=>'required | string | max:40 | email ',
             'nom'=>'required | string| max:20 ',
             'prenom'=>'required| string | max:20 ',
-            'motdepasse'=>'required | max:30 ',
+            'mot_de_passe'=>'required | max:30 ',
         ];
     }
     public function failedValidation(Validator $validator){
@@ -55,8 +55,8 @@ public function messages()
             'prenom.max:20'=>'votre nom ne doit pas depasser 20 characters',
             'prenom.string'=>"le prenom  doit être un string",
             'nom.string'=>"le nom  doit être un string",
-            'motdepasse.required '=>'le mot de passe doit etre fourni',
-            'motdepasse.max:30'=>'votre mot de passe ne doit pas depasser 20 characters',
+            'mot_de_passe.required '=>'le mot de passe doit etre fourni',
+            'mot_de_passe.max:30'=>'votre mot de passe ne doit pas depasser 20 characters',
         ];
     }
 

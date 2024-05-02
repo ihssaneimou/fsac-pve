@@ -24,7 +24,9 @@ class CreateDepartementRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_departement'=>'required | unique:departements'
+            'nom_departement'=>'required | unique:departements',
+            'code_departement'=>'required | unique:departements'
+
         ];
     }
 
@@ -41,7 +43,9 @@ class CreateDepartementRequest extends FormRequest
     {
         return[
             'nom_departement.required'=>'un nom de departement doit etre fourni',
-            'nom_departement.unique'=>'un nom de departement doit etre unique'
+            'nom_departement.unique'=>'un nom de departement doit etre unique',
+            'code_departement.required'=>'un nom de departement doit etre fourni',
+            'code_departement.unique'=>'un nom de departement doit etre unique'
 
         ];
     }

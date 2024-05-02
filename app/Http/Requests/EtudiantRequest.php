@@ -24,8 +24,8 @@ class EtudiantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'codeApogee'=>'required | unique|integer',
-            'id_rapport'=>'required | integer | exists:rapports,id_rapport',
+            //'codeApogee'=>'required | unique|integer',
+            //'id_rapport'=>'required | integer | exists:rapports,id_rapport',
             'nom_etudiant'=>'required | string ',
             'prenom_etudiant'=>'required | string',
             'CNE'=>'required | string',

@@ -10,7 +10,7 @@ class gerer extends Model
 {
 
         use HasFactory;
-        protected $primaryKey = [
+        public $primaryKey = [
            ' id_session',
            'id_administrateur'
         ];

@@ -16,6 +16,7 @@ use App\Http\Controllers\AdministrateurController;
 use App\Http\Controllers\controlercontroller;
 use App\Http\Controllers\tabletteController;
 use App\Http\Controllers\gererController;
+use App\Http\Controllers\sessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -79,13 +80,18 @@ Route::delete('administrateur/{administrateur}',[AdministrateurController::class
 
 Route::get('tablette',[tabletteController::class,'index']);
 Route::post('tablette/create',[tabletteController::class,'store']);
-Route::put('tablette/edit/{administrateur}',[tabletteController::class,'update']);
-Route::delete('tablette/{administrateur}',[tabletteController::class,'delete']) ;
+Route::put('tablette/edit/{tablette}',[tabletteController::class,'update']);
+Route::delete('tablette/{tablette}',[tabletteController::class,'delete']) ;
+
+Route::get('session',[sessionController::class,'index']);
+Route::post('session/create',[sessionController::class,'store']);
+Route::put('session/edit/{tablette}',[sessionController::class,'update']);
+Route::delete('session/{tablette}',[sessionController::class,'delete']) ;
 
 Route::get('gerer',[gererController::class,'index']);
 Route::post('gerer/create',[gererController::class,'store']);
-Route::put('gerer/edit/{administrateur}',[gererController::class,'update']);
-Route::delete('gerer/{administrateur}',[gererController::class,'delete']);
+Route::put('gerer/edit/{gerer}',[gererController::class,'update']);
+Route::delete('gerer/{gerer}',[gererController::class,'delete']);
 
 
 Route::get('controler',[controlercontroller::class,'index']);

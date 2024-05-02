@@ -19,10 +19,8 @@ class gererController extends Controller
     
             try{
             $gerer = new gerer();
-            $gerer->id_administrateur=$request->id_administrateur;
             $gerer->id_session=$request->id_session;
-            
-    
+            $gerer->id_administrateur=$request->id_administrateur;   
             $gerer->save();
     
     

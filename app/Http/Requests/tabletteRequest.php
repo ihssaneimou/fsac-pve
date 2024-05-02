@@ -25,9 +25,9 @@ class tabletteRequest extends FormRequest
     {
         return [
             'adresse_mac'=>' string | max:12 | required',
-            'numero_serie'=>'numeric |required| digits:20 ',
+            'numero_serie'=>'numeric |required',
             'statut'=>'boolean  | required',
-            'code_association'=>'numeric | digits:20|required'
+            'code_association'=>'numeric |required'
         ];
     }
     public function failedValidation(Validator $validator){
@@ -45,11 +45,11 @@ class tabletteRequest extends FormRequest
             'adresse_mac.string'=>"ladresse  doit être un string",
             'adresse_mac.max:12'=>"ladresse ne doit pas depasser 12 characteres",
             'adresse_mac.required'=>"ladresse est obligatoire",
-            "numero_serie.digits"=>"Le numéro de série doit contenir exactement 20 chiffres ",
+            //"numero_serie.digits"=>"Le numéro de série doit contenir exactement 20 chiffres ",
             "numero_serie.numeric"=>"le numéro de série doit etre numerique",
             "numero_serie.required"=>"Le numéro de série est requis",
             "code_association.numeric"=>"Le code d'association doit être un nombre",
-            "code_association.digits"=>"Le code d'association doit contenir exactement 20 chiffres",
+            //"code_association.digits"=>"Le code d'association doit contenir exactement 20 chiffres",
             "code_association.required"=>"Le code d'association est obligatoire",
             "statut.boolean"=>"Le champ statut doit être une valeur boolean",
             "statut.required"=>"Le champ statut est obligatoire"
