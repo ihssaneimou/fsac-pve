@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class associer extends Model
 {
-    protected $primaryKey = [
-       ' id_affectation',
-       'id_surveillant',
-    ];
+    // protected $primaryKey = [
+    //    ' id_affectation',
+    //    'id_surveillant',
+    // ];
     public function surveillant()
     {
         return $this->belongsTo(examen::class, 'id_surveillant');

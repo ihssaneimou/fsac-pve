@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class signerRequest extends FormRequest
+class signerRaquest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,9 @@ class signerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_surveillant'=>'required | integer | exists:surveillant,id_surveillant',
-            'id_pv'=>'required | integer | exists:pvs,id_pv'
+            'id_surveillant'=>'required | integer | exists:surveillants,id_surveillant',
+            'id_pv'=>'required | integer | exists:pvs,id_pv',
+            'signature'=>'required | string',
         ];
     }
 
@@ -43,11 +44,12 @@ class signerRequest extends FormRequest
         return[
             'id_surveillant.required'=>'le id de surveillant est obligatoire',
             'id_surveillant.integer'=>'le id de surveillant dois étre entier ',
-            'id_surveillant.exists:surveillant,id_surveillant'=>'le id de surveillant n\'existe pas',
+            'id_surveillant.exists:surveillants,id_surveillant'=>'le id de surveillant n\'existe pas',
             'id_pv.required'=>'le id de pv est obligatoire',
             'id_pv.integer'=>'le id de pv dois étre entier ',
             'id_pv.exists:pvs,id_pv'=>'le id de pv n\'existe pas',
-
+            'signature.required'=>'la signature est obligatoire',
+            'signature.string'=>'la signature dois étre une chaine de caractere',
             
         ];
     }

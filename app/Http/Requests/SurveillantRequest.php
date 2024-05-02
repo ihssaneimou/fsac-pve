@@ -25,7 +25,6 @@ class SurveillantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_surveillant'=>'required | unique|integer',
             'id_departement'=>'required | integer | exists:departements,id_departement',
             'nomComplet_s'=>'required | string ',
         ];
@@ -42,9 +41,6 @@ class SurveillantRequest extends FormRequest
     public function messages()
     {
         return[
-            'id_surveillant.required'=>"l id du surveillant du surveillant doit etre fourni",
-            'id_surveillant.unique' =>"l id du surveillant du surveillant doit être unique",
-            'id_surveillant.integer' =>"l id du surveillant doit être un  nombre entier",
             'id_departement.required'=>'le id de departement doit etre fourni',
             'id_departement.integer'=>'le id du departement doit etre entier',
             'id_departement.exists:departements,id_departement'=>'le id du departement doit exister',

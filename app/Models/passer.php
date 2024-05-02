@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class passer extends Model
 {
-    protected $primaryKey = [
-       ' id_examen',
-       'codeApogee',
-       'id_local'
-    ];
+    // protected $primaryKey = [
+    //    ' id_examen',
+    //    'codeApogee',
+    //    'id_local'
+    // ];
     protected $fillable =[
         'num_exam',
         

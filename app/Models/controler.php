@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class controler extends Model
 {
     
-        protected $primaryKey = [
-           ' id_administrateur', 'id_tablette' 
-        ];
+        // protected $primaryKey = [
+        //    ' id_administrateur', 'id_tablette' 
+        // ];
         
         public function administrateur()
         {

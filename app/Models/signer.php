@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class signer extends Model
 {
-    protected $primaryKey = [
-       ' id_surveillant',
-       'id_pv'
-    ];
+    // protected $primaryKey = [
+    //    ' id_surveillant',
+    //    'id_pv'
+    // ];
     protected $fillable =[
-        'num_exam',
+        'signature',
     ];
 
     public function surveillant()
