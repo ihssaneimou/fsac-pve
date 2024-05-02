@@ -13,9 +13,11 @@ use App\Http\Controllers\RapportController;
 use App\Http\Controllers\signerController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AdministrateurController;
+use App\Http\Controllers\associerController;
 use App\Http\Controllers\controlercontroller;
 use App\Http\Controllers\tabletteController;
 use App\Http\Controllers\gererController;
+use App\Http\Controllers\passerController;
 use App\Http\Controllers\sessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -96,7 +98,7 @@ Route::delete('gerer/{gerer}',[gererController::class,'delete']);
 
 Route::get('controler',[controlercontroller::class,'index']);
 Route::post('controler/create',[controlerController::class,'store']);
-Route::put('controler/edit/{controler}',[controlerController::class,'update']);
+Route::put('controler/edit/{controler}',[controlercontroller::class,'update']);
 Route::delete('controler/{controler}',[controlerController::class,'delete']);
 
 Route::get('affectation',[affectationController::class,'index']);
@@ -117,11 +119,24 @@ Route::post('examen/create',[examenController::class,'store']);
 Route::put('examen/edit/{examen}',[examenController::class,'update']);
 Route::delete('examen/{examen}',[examenController::class,'delete']);
 
-Route::get('signer',[examenController::class,'index']);
+Route::get('signer',[signerController::class,'index']);
 
 Route::post('signer/create',[signerController::class,'store']);
 Route::put('signer/edit/{signer}',[signerController::class,'update']);
 Route::delete('signer/{signer}',[signerController::class,'delete']);
+
+Route::get('passer',[passerController::class,'index']);
+
+Route::post('passer/create',[passerController::class,'store']);
+Route::put('passer/edit/{passer}',[passerController::class,'update']);
+Route::delete('passer/{passer}',[passerController::class,'delete']);
+
+
+Route::get('associer',[associerController::class,'index']);
+
+Route::post('associer/create',[associerController::class,'store']);
+Route::put('associer/edit/{associer}',[associerController::class,'update']);
+Route::delete('associer/{associer}',[associerController::class,'delete']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 

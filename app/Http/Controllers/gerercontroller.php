@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\gererRequest;
+use App\Models\administrateur;
 use App\Models\gerer;
+use App\Models\session;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -36,11 +38,14 @@ class gererController extends Controller
     
         }
     
-        public function update(gererRequest $request, gerer $gerer) {
+        public function update(gererRequest $request,  $id_administrateur,$id_session) {
             try {
-                $gerer->id_administrateur = $request->id_administrateur;
-                $gerer->id_session = $request->id_session;
-                $gerer->save();
+                $gerer = Gerer::where('id_admin', $id_administrateur)
+                      ->where('id_session', $id_session)
+                      ->firstOrFail();
+
+                // Mettre à jour les données
+                $gerer->update($request->all());
         
                 return response()->json([
                     'status_code' => 201,
@@ -52,4 +57,20 @@ class gererController extends Controller
                 return response()->json($exception);
             }
         }
+            public function delete(gerer $gerer) {
+                try{
+                       $gerer->delete();
+       
+                   return response()->json([
+                       'status_code'=>200,
+                       'status_message'=>'la gestion  a été supprimer',
+                       'data'=>$gerer
+                   ]);
+                   
+                   
+                }catch(Exception $exception){
+                   return response()->json($exception);
+               }
+           }
+        
 }
