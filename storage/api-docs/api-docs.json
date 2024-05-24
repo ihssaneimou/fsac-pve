@@ -2938,16 +2938,6 @@
                                     "type_session": {
                                         "type": "string",
                                         "example": ""
-                                    },
-                                    "datedebut": {
-                                        "type": "string",
-                                        "format": "date",
-                                        "example": ""
-                                    },
-                                    "datefin": {
-                                        "type": "string",
-                                        "format": "date",
-                                        "example": ""
                                     }
                                 },
                                 "type": "object"
@@ -3522,6 +3512,18 @@
                                     "adresse_mac": {
                                         "type": "string",
                                         "example": ""
+                                    },
+                                    "numero_serie": {
+                                        "type": "integer",
+                                        "example": ""
+                                    },
+                                    "statut": {
+                                        "type": "boolean",
+                                        "example": "false"
+                                    },
+                                    "code_association": {
+                                        "type": "integer",
+                                        "example": ""
                                     }
                                 },
                                 "type": "object"
@@ -3574,9 +3576,13 @@
                                         "type": "string",
                                         "example": ""
                                     },
-                                    "statut": {
-                                        "type": "string",
+                                    "numero_serie": {
+                                        "type": "integer",
                                         "example": ""
+                                    },
+                                    "statut": {
+                                        "type": "boolean",
+                                        "example": "false"
                                     },
                                     "code_association": {
                                         "type": "integer",
@@ -3622,64 +3628,6 @@
                         }
                     }
                 ],
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "content": {
-                            "application/json": {
-                                "schema": {}
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid status value"
-                    }
-                }
-            }
-        },
-        "/api/tablette/getEtat": {
-            "post": {
-                "tags": [
-                    "Tablette"
-                ],
-                "summary": "delete all tablettes for REST API",
-                "description": "Multiple status values can be provided with comma separated string",
-                "operationId": "get adress mac tablette",
-                "parameters": [
-                    {
-                        "name": "status",
-                        "in": "query",
-                        "description": "Status values that needed to be considered for filter",
-                        "required": true,
-                        "explode": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "available",
-                            "enum": [
-                                "available",
-                                "pending",
-                                "sold"
-                            ]
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "description": "les donnees de tablette",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "properties": {
-                                    "adresse_mac": {
-                                        "type": "string",
-                                        "example": ""
-                                    }
-                                },
-                                "type": "object"
-                            }
-                        }
-                    }
-                },
                 "responses": {
                     "200": {
                         "description": "successful operation",

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tablette extends Model
 {
     protected $primaryKey = 'id_tablette';
-    protected $fillable = ['adresse_mac','statut', 'code_association'];
+    protected $fillable = ['adresse_mac', 'numero_serie','statut', 'code_association'];
 
 }
