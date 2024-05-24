@@ -15,8 +15,6 @@ return new class extends Migration
             $table->bigIncrements('id_session');
             $table->string('nom_session',20);
             $table->string('type_session',20);
-            $table->date('datedebut');
-            $table->date('datefin');
             $table->timestamps();
         });
     }

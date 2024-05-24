@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('tablettes', function (Blueprint $table) {
             $table->bigIncrements('id_tablette');
-            $table->char('adresse_mac', 50);
-            $table->char('statut',20);
-            $table->integer('code_association')->nullable();
+            $table->char('adresse_mac', 12);
+            $table->integer('numero_serie');
+            $table->boolean('statut');
+            $table->integer('code_association');
             $table->timestamps();
         });
     }
